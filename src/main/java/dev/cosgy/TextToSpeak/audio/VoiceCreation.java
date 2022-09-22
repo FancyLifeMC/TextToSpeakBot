@@ -80,7 +80,7 @@ public class VoiceCreation {
         UserSettings settings = bot.getUserSettingsManager().getSettings(user.getIdLong());
         Process p = null;
         UUID fileId = UUID.randomUUID();
-        String fileName = "wav" + File.separator + guild.getId() + File.separator + fileId + ".wav";
+        String fileName = new File(".").getAbsoluteFile().getParent() + "wav" + File.separator + guild.getId() + File.separator + fileId + ".wav";
 
         File file = new File(vDic + File.separator + settings.getVoice() + ".htsvoice");
         logger.debug("読み込む声データ:" + file);
